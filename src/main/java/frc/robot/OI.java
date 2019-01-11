@@ -17,7 +17,15 @@ public class OI {
   Joystick RightStick = new Joystick(RobotMap.RIGHT_JOY);
   Joystick LeftStick = new Joystick(RobotMap.LEFT_JOY);
   //                Buttons
-  Button button = new JoystickButton(RightStick , 0);
+  Button maglolIn = new JoystickButton(RightStick , 0);
+  Button maglolOut = new JoystickButton(RightStick , 0);
+  Button elevatorPosition1 = new JoystickButton(RightStick , 0);
+  Button elevatorPosition2 = new JoystickButton(RightStick , 0);
+  Button elevatorPosition3 = new JoystickButton(RightStick , 0);
+  Button hatchIntake = new JoystickButton(RightStick , 0);
+  Button hatchout = new JoystickButton(RightStick , 0);
+  Button cargoIntake = new JoystickButton(RightStick , 0);
+  Button cargoshoot = new JoystickButton(RightStick , 0);
   //                Methods
 
   public double getRightY(){

@@ -8,12 +8,15 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
 public class MaglolCommand extends Command {
-  public MaglolCommand() {
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+  boolean toReverse;
+  public MaglolCommand(boolean toReverse) {
+    this.toReverse = toReverse;
+    requires(Robot.maglol);
   }
+  
 
   // Called just before this Command runs the first time
   @Override
@@ -23,6 +26,9 @@ public class MaglolCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    if(toReverse == false){Robot.maglol.setSpeed(1);}
+    else{Robot.maglol.setSpeed(-1);}   
+
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -40,5 +46,6 @@ public class MaglolCommand extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    Robot.maglol.setSpeed(0);
   }
 }

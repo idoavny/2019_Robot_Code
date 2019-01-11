@@ -14,21 +14,23 @@ import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.AutonomusCommand;
-import frc.robot.commands.Encoder;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Elevator;
+import frc.robot.subsystems.Maglol;
 
 public class Robot extends TimedRobot {
   public static Calculations cal;
   public static DriveTrain drive;
   public static OI m_oi;
   public static Elevator elevator;
+  public static Maglol maglol;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
   @Override
   public void robotInit() {
+    maglol = new Maglol();
     elevator = new Elevator();
     cal = new Calculations();
     drive = new DriveTrain();
@@ -45,7 +47,6 @@ public class Robot extends TimedRobot {
 
   @Override
   public void robotPeriodic() {
-  SmartDashboard.putData("Encoder Reset", new Encoder());
   SmartDashboard.putNumber("Gyro Angle", drive.getAngle());
   SmartDashboard.putNumber("RightEncoder Count",drive.getEncoderCount(1));
   SmartDashboard.putNumber("LeftEncoder Count",drive.getEncoderCount(2));

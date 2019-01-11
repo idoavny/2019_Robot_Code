@@ -19,8 +19,8 @@ import frc.robot.RobotMap;
 public class Elevator extends Subsystem {
 private DigitalInput limitSwitch;
  private Encoder encoder = new Encoder(9, 8, false, EncodingType.k1X);
- private TalonSRX motor1 = new TalonSRX(RobotMap.MOTOR1_ID);
- private TalonSRX motor2 = new TalonSRX(RobotMap.MOTOR2_ID);
+ private TalonSRX motor1 = new TalonSRX(RobotMap.ELEVATOR_MOTOR1_ID);
+ private TalonSRX motor2 = new TalonSRX(RobotMap.ELEVATOR_MOTOR2_ID);
 
   public Elevator(){
   encoder.setDistancePerPulse(0);

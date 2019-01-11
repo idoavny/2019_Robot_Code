@@ -15,22 +15,25 @@ package frc.robot;
  * floating around.
  */
 public class RobotMap {
-//                SpeedControllers Ports
-      //    DriveTrain    //
-  public static int RIGHT_REAR_MOTOR = 2;
-  public static int RIGHT_FRONT_MOTOR = 3;
-  public static int LEFT_REAR_MOTOR = 1;
-  public static int LEFT_FRONT_MOTOR = 0;
-      //    Elevator    //
-  public static int MOTOR1_ID = 0;
-  public static int MOTOR2_ID = 0;
+//               SpeedControllers Ports
+      /*    DriveTrain    */
+      public static int DRIVE_RIGHT_REAR_MOTOR = 2;
+      public static int DRIVE_RIGHT_FRONT_MOTOR = 3;
+      public static int DRIVE_LEFT_REAR_MOTOR = 1;
+      public static int DRIVE_LEFT_FRONT_MOTOR = 0;
+      /*    Elevator    */
+      public static int ELEVATOR_MOTOR1_ID = 0;
+      public static int ELEVATOR_MOTOR2_ID = 0;
+      /*    Maglol      */
+      public static int MAGLOL_MOTOR_ID = 0;
+
 //                Joysticks
-  public static int RIGHT_JOY = 1;
-  public static int LEFT_JOY = 0;
+      public static int RIGHT_JOY = 1;
+      public static int LEFT_JOY = 0;
 
 //                Sensors
- public static int RIGHT_ENCODER_SOURCE_A = 0;
- public static int RIGHT_ENCODER_SOURCE_B = 1;
- public static int LEFT_ENCODER_SOURCE_A = 3;
- public static int LEFT_ENCODER_SOURCE_B = 4;
+      public static int DRIVE_RIGHT_ENCODER_SOURCE_A = 0;
+      public static int DRIVE_RIGHT_ENCODER_SOURCE_B = 1;
+      public static int DRIVE_LEFT_ENCODER_SOURCE_A = 3;
+      public static int DRIVE_LEFT_ENCODER_SOURCE_B = 4;
 }
