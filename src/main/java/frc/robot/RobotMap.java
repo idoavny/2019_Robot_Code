@@ -16,18 +16,21 @@ package frc.robot;
  */
 public class RobotMap {
 //                SpeedControllers Ports
-  public static int rightRearMotor = 2;
-  public static int rightFrontMotor = 3;
-  public static int leftRearMotor = 1;
-  public static int leftFrontMotor = 0;
-
+      //    DriveTrain    //
+  public static int RIGHT_REAR_MOTOR = 2;
+  public static int RIGHT_FRONT_MOTOR = 3;
+  public static int LEFT_REAR_MOTOR = 1;
+  public static int LEFT_FRONT_MOTOR = 0;
+      //    Elevator    //
+  public static int MOTOR1_ID = 0;
+  public static int MOTOR2_ID = 0;
 //                Joysticks
   public static int RIGHT_JOY = 1;
   public static int LEFT_JOY = 0;
 
 //                Sensors
- public static int Right_Encoder_SourceA = 0;
- public static int Right_Encoder_SourceB = 1;
- public static int Left_Encoder_SourceA = 3;
- public static int Left_Encoder_SourceB = 4;
+ public static int RIGHT_ENCODER_SOURCE_A = 0;
+ public static int RIGHT_ENCODER_SOURCE_B = 1;
+ public static int LEFT_ENCODER_SOURCE_A = 3;
+ public static int LEFT_ENCODER_SOURCE_B = 4;
 }

@@ -16,17 +16,20 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.AutonomusCommand;
 import frc.robot.commands.Encoder;
 import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.Elevator;
 
 public class Robot extends TimedRobot {
   public static Calculations cal;
   public static DriveTrain drive;
   public static OI m_oi;
+  public static Elevator elevator;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
   @Override
   public void robotInit() {
+    elevator = new Elevator();
     cal = new Calculations();
     drive = new DriveTrain();
     m_oi = new OI();

@@ -7,17 +7,44 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
+import edu.wpi.first.wpilibj.CounterBase.EncodingType;
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 
 public class Elevator extends Subsystem {
-  LIMIT
-  TalonSRX motor1 = new TalonSRX(RobotMap.MOTOR1_ID);
-  TalonSRX motor2 = new TalonSRX(RobotMap.MOTOR2_ID);
+private DigitalInput limitSwitch;
+ private Encoder encoder = new Encoder(9, 8, false, EncodingType.k1X);
+ private TalonSRX motor1 = new TalonSRX(RobotMap.MOTOR1_ID);
+ private TalonSRX motor2 = new TalonSRX(RobotMap.MOTOR2_ID);
 
- 
+  public Elevator(){
+  encoder.setDistancePerPulse(0);
+  encoder.setMaxPeriod(0);
+  encoder.setReverseDirection(false);
+  }
+  public void encoderReset(){
+    encoder.reset();
+  }
+  public void encoderGet(){
+    encoder.get();
+  }
+  public void ElevatorUp(double speed){
+    motor1.set(ControlMode.Current, speed);
+    motor2.set(ControlMode.Current, speed);
+    
+  }
+  public void ElevatorDown(double speed){
+    motor1.set(ControlMode.Current, -speed);
+    motor2.set(ControlMode.Current, -speed);
+  }
+  public boolean limitSwitchValue(){
+    return limitSwitch.get();
+  }
 
   @Override
   public void initDefaultCommand() {
